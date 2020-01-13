@@ -11,9 +11,6 @@ namespace CommonUtils
         public static IntPtr GetFunctionPointer(Delegate d)
         => Marshal.GetFunctionPointerForDelegate(d);
 
-        //public static IntPtr GetIDispatchPointer(object o)
-        //=> Marshal.GetIDispatchForObject(o);
-
         public static IntPtr GetIUnknownPointer(object o)
         => Marshal.GetIUnknownForObject(o);
 

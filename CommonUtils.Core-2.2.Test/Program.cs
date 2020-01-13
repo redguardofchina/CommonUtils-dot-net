@@ -1,12 +1,10 @@
-﻿using CommonUtils;
-using System;
-
-namespace CommonUtils_2._2.Test
+﻿namespace CommonUtils.Test
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Core.PointerUtil.GetIDispatchPointer(null);
             ConsoleUtil.Pause();
         }
     }
