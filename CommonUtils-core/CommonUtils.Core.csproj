@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>CommonUtils</RootNamespace>
-    <AssemblyName>CommonUtils-core</AssemblyName>
+    <AssemblyName>CommonUtils.Core</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils-standard\CommonUtils-standard.csproj" />
+    <ProjectReference Include="..\CommonUtils-standard\CommonUtils.Standard.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>CommonUtils.Test</RootNamespace>
+    <RootNamespace>CommonUtils.Core.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils-core\CommonUtils-core.csproj" />
+    <ProjectReference Include="..\CommonUtils-core\CommonUtils.Core.csproj" />
   </ItemGroup>
 
 </Project>
