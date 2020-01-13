@@ -7,6 +7,8 @@
     {
         static void Main(string[] args)
         {
+            ConsoleUtil.WriteLine(SystemUtil.ScreenWidth);
+            ConsoleUtil.WriteLine(SystemUtil.ScreenHeight);
             ConsoleUtil.Pause();
         }
     }

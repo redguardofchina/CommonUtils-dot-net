@@ -7,7 +7,7 @@
     <ProjectGuid>{1A4CFB16-9160-46C6-8D5D-AD373C050504}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CommonUtils.Test</RootNamespace>
-    <AssemblyName>CommonUtils.Test</AssemblyName>
+    <AssemblyName>CommonUtils.Framework.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -76,15 +76,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{173ba26b-af8c-4949-a7ce-1e832296adfe}</Project>
-      <Name>CommonUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils.Framework\CommonUtils.Framework.csproj">
+      <Project>{173ba26b-af8c-4949-a7ce-1e832296adfe}</Project>
+      <Name>CommonUtils.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{8f8a4f0d-ad41-4de9-8658-4c2f32dd0b06}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
