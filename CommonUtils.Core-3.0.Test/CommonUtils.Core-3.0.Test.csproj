@@ -6,13 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="~run.cmd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\CommonUtils.Core-3.0\CommonUtils.Core-3.0.csproj" />
   </ItemGroup>
 
 </Project>

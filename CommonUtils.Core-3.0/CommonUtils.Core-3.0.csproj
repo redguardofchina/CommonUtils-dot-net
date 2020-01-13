@@ -5,50 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\EmptySqlite.db" />
-    <EmbeddedResource Include="Resources\Test.txt" />
+
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Apache.NMS.ActiveMQ.Core" Version="1.7.2.1" />
-
-    <!--这个不能省略 虽然是Apache.NMS.ActiveMQ的依赖项 但是如果不引用就会报错-->
-    <PackageReference Include="Apache.NMS.Core" Version="1.7.1.1" />
-    <PackageReference Include="LibGit2Sharp" Version="0.26.2" />
-
-    <PackageReference Include="LINQKit.Core" Version="1.1.17" />
-
-    <!--此处隐式依赖了Microsoft.AspNetCore.Cors，Cors中包含依赖Microsoft.AspNetCore.Http.Abstractions-->
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
-
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
-
-    <!--添加razor或api时，框架会添加到项目里，删了会再出现-->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-
-    <!--添加razor或api时，框架会添加到项目里，删了会再出现-->
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
-
-    <!--添加razor或api时，框架会添加到项目里，删了会再出现-->
-    <!--会导致发布文件出现CodeAnalysis-->
-    <!--<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />-->
-
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.0" />
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.50" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.1" />
-    <PackageReference Include="RabbitMQ.Client" Version="5.1.2" />
-    <PackageReference Include="ServiceStack.Redis" Version="5.7.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
-    <PackageReference Include="System.Data.Odbc" Version="4.7.0" />
-    <PackageReference Include="System.Data.OleDb" Version="4.7.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
-    <PackageReference Include="ThoughtWorks.QRCode.Core" Version="1.0.1.2" />
+    <ProjectReference Include="..\CommonUtils.Core-2.2\CommonUtils.Core-2.2.csproj" />
   </ItemGroup>
 
 </Project>

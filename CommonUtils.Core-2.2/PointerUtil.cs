@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace CommonUtils.Core
+namespace CommonUtils
 {
     /// <summary>
     /// 指针操作
