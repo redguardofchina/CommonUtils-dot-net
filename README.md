@@ -1,39 +1,25 @@
 # CommonUtils-dot-net
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+#### 项目介绍
+.net 通用工具类
 
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 通用类库
+1. AssemblyUtil-反射处理
+2. BinaryUtil-二进制处理
+3. DigitUtil-数字处理
+4. ExtensionUtil-类扩展
+5. FileUtil-文件处理
+5. FloderUtil-文件夹处理
+6. FtpUtil-Ftp方法
+7. FtpClient-封装Ftp参数
+8. HttpUtil-Http方法
+9. IdCount-计数器
+10. InfoUtil-社会信息获取（天气）
+11. JsonUtil-json处理
+12. KeyList-键-动态数组
+13. LogUtil-打log
+14. RandomUtil-随机数处理
+15. StringUtil-字符串处理
+16. TimeUtil-时间处理（转换，时间戳）
+17. ......
+18. ......

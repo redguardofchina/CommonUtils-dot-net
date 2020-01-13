@@ -34,7 +34,7 @@ namespace CommonUtils
             {
                 if (!FileUtil.Exists(path))
                 {
-                    var stream = ResourceUtil.ReadCommonStream(ResourceUtil.CommonResourceName.EmptySqlite);
+                    var stream = ResourceUtil.ReadCommonStream(ResourceUtil.CommonResourceName.Sqlite);
                     stream.CreateFile(path);
                 }
                 return FromPath(path);

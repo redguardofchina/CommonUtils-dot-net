@@ -1,0 +1,2 @@
+CommonUtils.Test.Web/wwwroot/common
+svn://gitee.com/atalent/common-web

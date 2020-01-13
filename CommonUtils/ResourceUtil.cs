@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Resources;
 using System.Text;
 
@@ -22,7 +23,9 @@ namespace CommonUtils
 
         public enum CommonResourceName
         {
-            EmptySqlite,
+            LoadingImage,
+            MissingImage,
+            Sqlite,
             TestText
         }
 
@@ -35,17 +38,24 @@ namespace CommonUtils
 
             switch (commonResourceName)
             {
-                case CommonResourceName.EmptySqlite:
-                    name = "EmptySqlite.db";
+                case CommonResourceName.LoadingImage:
+                    name = "loading.gif";
+                    break;
+                case CommonResourceName.MissingImage:
+                    name = "missing.png";
+                    break;
+                case CommonResourceName.Sqlite:
+                    name = "sqlite.db";
                     break;
                 case CommonResourceName.TestText:
-                    name = "Test.txt";
+                    name = "test.txt";
                     break;
             }
 
             //这里有时候是CommonNamespace有时候是CommonAssemblyName，烦
             var path = ReflectionUtil.CommonNamespace.Append(".Resources.", name);
             //var path = ReflectionUtil.CommonAssemblyName.Append(".Resources.", name);
+
             var stream = ReflectionUtil.CommonAssembly.GetManifestResourceStream(path);
             if (stream == null)
                 LogUtil.Log(new ExceptionPlus("读取资源文件失败：" + path));
