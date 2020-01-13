@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>CommonUtils</RootNamespace>
+    <AssemblyName>CommonUtils-core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils-standard\CommonUtils-standard.csproj" />
+  </ItemGroup>
+
+</Project>
