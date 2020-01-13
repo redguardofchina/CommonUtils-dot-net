@@ -1,0 +1,3 @@
+﻿select project of context
+Add-Migration @ActionName
+update-database

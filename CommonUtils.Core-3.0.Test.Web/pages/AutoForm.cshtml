@@ -1,0 +1,70 @@
+﻿@page
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AutoForm</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#add").click(function () {
+                alert("add");
+                $("#set").val(JSON.stringify($("form").json()));
+            });
+            $("#edit").click(function () {
+                alert("edit");
+                $.getJson("api/weather", function (result) {
+                    if (result.Code != 0) {
+                        alert(result.Message);
+                        return;
+                    }
+                    $("#get").val(JSON.stringify(result.Data));
+                    $("form").json(result.Data);
+                });
+            });
+            $("#reset").click(function () {
+                alert("reset");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        Reserve1 <input type="checkbox" name="Reserve1" />
+        <hr />
+        city <select name="city">
+            <option>郊区</option>
+            <option>市中心</option>
+        </select>
+        <hr />
+        time <input name="time" value="1" />
+        <hr />
+        desc <input name="desc" value="2" />
+        <hr />
+        temp <input name="temp" value="3" />
+        <hr />
+        templow <input name="templow" value="4" />
+        <hr />
+        temphigh <input name="temphigh" value="5" />
+        <hr />
+        Wind <input name="Wind" value="6" />
+        <hr />
+        Humidity <input name="Humidity" value="7" />
+        <hr />
+        Air <input name="Air" value="8" />
+        <hr />
+        add <button type="button" id="add" name="add" value="9">添加</button>
+        <hr />
+        edit <button type="button" id="edit" name="edit">编辑</button>
+        <hr />
+        reset <button type="reset" id="reset" name="reset" value="11">重置</button>
+    </form>
+    <hr />
+    set <textarea id="set" style="width:800px;height:100px;"></textarea>
+    <hr />
+    get <textarea id="get" style="width:800px;height:100px;"></textarea>
+</body>
+</html>

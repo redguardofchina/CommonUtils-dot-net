@@ -1,0 +1,27 @@
+﻿@page
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cover</title>
+    <link href="common.css" rel="stylesheet" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#cover").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="cover">
+        <div></div>
+        <img src="loading.gif" />
+    </div>
+    <button>开启遮罩</button>
+</body>
+</html>

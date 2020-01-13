@@ -1,0 +1,22 @@
+﻿@page
+@using CommonUtils.Test.Web
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>code</title>
+    <link href="/common/common.css" rel="stylesheet" />
+    <script src="/common/jquery-3.3.1.min.js"></script>
+    <script src="/common/common.js"></script>
+</head>
+<body>
+    <button api-refresh="/api/code/generate">重新生成</button>
+    <button api-refresh="/api/code/clear">清空数据</button>
+    <hr />
+    已使用：<pre>@CodeUtil.GetConsumed()</pre>
+    <hr />
+    未使用：<pre>@CodeUtil.GetConsumed(false)</pre>
+</body>
+</html>

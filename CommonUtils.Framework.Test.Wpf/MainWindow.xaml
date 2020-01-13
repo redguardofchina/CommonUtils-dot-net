@@ -1,0 +1,13 @@
+﻿<Window x:Class="CommonUtils.Test.Wpf.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:CommonUtils.Test.Wpf" mc:Ignorable="d" Title="CommonUtils.Test.Wpf" Height="450" Width="800">
+    <Grid Background="#cccccc">
+        <Label Content="TextBox1:" HorizontalAlignment="Center" Margin="0,20,580,0" VerticalAlignment="Top" />
+        <Label Content="TextBox2:" HorizontalAlignment="Center" Margin="100,20,0,0" VerticalAlignment="Top" />
+
+        <TextBox Name="TextBox1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,300,0" Text="输入测试值" Width="200" Height="23" />
+        <TextBox Name="TextBox2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="380,20,0,0" Text="看我72变" Width="200" Height="23" />
+
+        <Button Name="ButtonSetValue" Content="赋值" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,30,0" />
+
+        <TextBox Name="TextBoxLog" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" TextWrapping="Wrap" Width="720" Height="320" />
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿@page
+@{
+    var id = Request.Query["id"].FirstOrDefault();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    view  id: @id
+</body>
+</html>

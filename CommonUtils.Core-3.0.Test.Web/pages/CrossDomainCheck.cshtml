@@ -1,0 +1,50 @@
+﻿@page
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CrossDomainCheck</title>
+    <link href="/common/common.css" rel="stylesheet" />
+    <script src="/common/jquery-1.10.2.js"></script>
+    <script src="/common/common.js"></script>
+    <script src="/common/clipboard.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                //$.get("http://localhost:8001/api/HttpGetTest", function (data) {
+                //    $("textarea").log("ajax get:" + data.toJsonString());
+                //});
+
+                //$.post("http://localhost:8001/api/HttpPostTest", {}, function (data) {
+                //    $("textarea").log("ajax post:" + data.toJsonString());
+                //});
+
+                //$.delete("http://localhost:8001/api/HttpDeleteTest", function (data) {
+                //    $("textarea").log("ajax delete:" + data.toJsonString());
+                //});
+
+                $.get("http://localhost:5000/api/HttpGetTest", function (data) {
+                    $("textarea").log("ajax get:" + data.toJsonString());
+                });
+
+                $.post("http://localhost:5000/api/HttpPostTest", {}, function (data) {
+                    $("textarea").log("ajax post:" + data.toJsonString());
+                });
+
+                $.delete("http://localhost:5000/api/HttpDeleteTest", function (data) {
+                    $("textarea").log("ajax delete:" + data.toJsonString());
+                });
+            });
+        });
+    </script>
+</head>
+<body class="margin50px">
+    CrossDomainCheck
+    <hr /><button>botton</button> <hr />
+    日志：<br />
+    <textarea class="width800px height600px"></textarea>
+    <hr />
+</body>
+</html>

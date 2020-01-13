@@ -1,0 +1,1 @@
+dotnet CommonUtils.Test.dll

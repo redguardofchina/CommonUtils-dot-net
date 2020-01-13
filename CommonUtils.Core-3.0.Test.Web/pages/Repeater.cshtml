@@ -1,0 +1,33 @@
+﻿@page
+@using CommonUtils
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Repeater</title>
+</head>
+<body>
+    @{
+        List<Weather> list = new List<Weather>();
+        list.Add(WeatherUtil.Get());
+        list.Add(WeatherUtil.Get());
+        list.Add(WeatherUtil.Get());
+        list.Add(WeatherUtil.Get());
+        foreach (var weather in list)
+        {
+            @Html.Raw(string.Format("{0}-{1}<br />", weather.City, weather.Air))
+            @Html.Raw(string.Format("{0}-{1}<br />", weather.City, weather.Air));
+            @weather.City @:-@weather.Air <br />;
+        }
+    }
+    @foreach (var weather in list)
+    {
+        @Html.Raw(string.Format("{0}-{1}<br />", weather.City, weather.Air))
+        @Html.Raw(string.Format("{0}-{1}<br />", weather.City, weather.Air));
+        @weather.City @:-@weather.Air <br />;
+    }
+    @@list[0].City
+</body>
+</html>
