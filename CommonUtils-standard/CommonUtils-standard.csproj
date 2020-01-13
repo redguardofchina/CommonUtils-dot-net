@@ -26,6 +26,7 @@
 
     <!--添加razor或api时，框架会添加到项目里，删了会再出现-->
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 
     <!--添加razor或api时，框架会添加到项目里，删了会再出现-->
     <!--会导致发布文件出现CodeAnalysis-->

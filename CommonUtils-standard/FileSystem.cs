@@ -1,5 +1,4 @@
-﻿//using Microsoft.VisualBasic.FileIO;
-using System.IO;
+﻿using System.IO;
 
 namespace CommonUtils
 {
@@ -37,17 +36,5 @@ namespace CommonUtils
         /// </summary>
         public static bool IsNullOrNotExists(string path)
         => FileUtil.GetInfo(path).IsNullOrNotExists() && FloderUtil.GetInfo(path).IsNullOrNotExists();
-
-        ///// <summary>
-        ///// 删除文件到回收站
-        ///// </summary>
-        //public static void DeleteToBin(this FileInfo file)
-        //=> Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(file.FullName, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-
-        ///// <summary>
-        ///// 删除文件夹到回收站
-        ///// </summary>
-        //public static void DeleteToBin(this DirectoryInfo floder)
-        //=> Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(floder.FullName, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
     }
 }
