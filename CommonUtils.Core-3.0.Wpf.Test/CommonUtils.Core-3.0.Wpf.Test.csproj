@@ -5,10 +5,11 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <RootNamespace>CommonUtils.Wpf.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils.Wpf\CommonUtils.Wpf.csproj" />
+    <ProjectReference Include="..\CommonUtils.Core-3.0.Wpf\CommonUtils.Core-3.0.Wpf.csproj" />
   </ItemGroup>
 
 </Project>
