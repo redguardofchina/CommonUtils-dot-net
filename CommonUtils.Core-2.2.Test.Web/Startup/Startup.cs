@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace CommonUtils.Test.Web
 {
@@ -16,6 +13,7 @@ namespace CommonUtils.Test.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //CommandUtil.CreateRunFile();
         }
 
         public IConfiguration Configuration { get; }
@@ -30,26 +28,31 @@ namespace CommonUtils.Test.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //2.2之后版本，swagger支持文件上传UI
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest)
+           //保留json大小写状态
+           .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver());
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //生成swagger
+            services.AddSwaggerGen(options =>
+            {
+                //设置swagger标题
+                options.SwaggerDoc("doc", new OpenApiInfo() { Title = "Edit Titile Here" });
+                //添加接口注释
+                options.IncludeXmlComments("document.xml");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
-
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/doc/swagger.json", null));
         }
     }
 }
