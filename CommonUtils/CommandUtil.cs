@@ -57,7 +57,7 @@ namespace CommonUtils
         {
             if (string.IsNullOrEmpty(assemblyName))
                 assemblyName = ReflectionUtil.GetAssemblyName(2);
-            var cmd = string.Format("dotnet {0}.dll\r\npause", assemblyName);
+            var cmd = string.Format("dotnet {0}\r\npause", assemblyName);
             FileUtil.Save(PathUtil.GetProjectFull("~run.cmd"), cmd, Encodings.UTF8NoBom);
         }
 

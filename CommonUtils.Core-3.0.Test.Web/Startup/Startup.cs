@@ -14,6 +14,7 @@ namespace CommonUtils.Test.Web
         {
             //todo 接口添加权限，控制访问，尝试用原生代码实现
             Configuration = configuration;
+            //CommandUtil.CreateRunFile();
         }
 
         public IConfiguration Configuration { get; }
