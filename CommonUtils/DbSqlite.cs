@@ -21,21 +21,15 @@ namespace CommonUtils
             /// <summary>
             /// EF会创建数据库，只需建好文件夹即可
             /// </summary>
-            public static string FromPathAndCheckFloder(string path)
+            public static string GetDefault(bool create = false)
             {
-                FileUtil.CreateFloder(path);
-                return FromPath(path);
-            }
-
-            /// <summary>
-            /// 没有的话从嵌入资源里面取
-            /// </summary>
-            public static string FromPathOrCommonResources(string path)
-            {
+                string path = PathConfig.DefaultSqlitePath;
                 if (!FileUtil.Exists(path))
                 {
-                    var stream = ResourceUtil.ReadCommonStream(ResourceUtil.CommonResourceName.Sqlite);
-                    stream.CreateFile(path);
+                    if (create)
+                        ResourceUtil.ReadCommonStream(ResourceUtil.CommonResourceName.Sqlite).CreateFile(path);
+                    else
+                        FileUtil.CreateFloder(path);
                 }
                 return FromPath(path);
             }

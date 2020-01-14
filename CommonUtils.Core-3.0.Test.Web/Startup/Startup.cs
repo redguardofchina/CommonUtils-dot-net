@@ -52,16 +52,10 @@ namespace CommonUtils.Test.Web
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("doc", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "CommonUtils.Test.Web", Version = "v1.0" });
-                options.IncludeXmlComments("comment.xml");
+                options.IncludeXmlComments("document.xml");
             });
 
-            var dbPath1 = PathUtil.GetFull("db/release.db");
-            var dbPath2 = PathUtil.GetFull("db/debug.db");
-
-            if (!FileUtil.Exists(dbPath1))
-                FileUtil.Copy(dbPath2, dbPath1);
-
-            var connection = DbSqlite.ConnectStrings.FromPath(dbPath1);
+            var connection = DbSqlite.ConnectStrings.GetDefault();
 
             //зЂВс
             services.AddDbContext<DefaultDbContext>(options => options.UseSqlite(connection));
