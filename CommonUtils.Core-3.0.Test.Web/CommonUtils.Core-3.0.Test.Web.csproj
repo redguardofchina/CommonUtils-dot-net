@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>comment.xml</DocumentationFile>
+    <DocumentationFile>document.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,20 +17,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190215023139_update.cs" />
-    <Compile Remove="Migrations\20190215023139_update.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="config\settings.json" />
     <None Include="config\settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Remove="db\release.db" />
-    <None Update="db\debug.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="run.cmd">
+    <None Update="~run.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
