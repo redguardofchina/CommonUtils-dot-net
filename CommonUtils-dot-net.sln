@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonUtils.Core-3.0.Wpf", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonUtils.Core-3.0.Wpf.Test", "CommonUtils.Core-3.0.Wpf.Test\CommonUtils.Core-3.0.Wpf.Test.csproj", "{16B555C0-A9A8-4F41-AD7B-6B5F7FD9E589}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Framework.Test.Wpf", "CommonUtils.Framework.Test.Wpf\CommonUtils.Framework.Test.Wpf.csproj", "{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,12 @@ Global
 		{16B555C0-A9A8-4F41-AD7B-6B5F7FD9E589}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16B555C0-A9A8-4F41-AD7B-6B5F7FD9E589}.Test|Any CPU.ActiveCfg = Debug|Any CPU
 		{16B555C0-A9A8-4F41-AD7B-6B5F7FD9E589}.Test|Any CPU.Build.0 = Debug|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

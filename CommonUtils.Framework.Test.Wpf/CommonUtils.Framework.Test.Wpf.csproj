@@ -7,7 +7,7 @@
     <ProjectGuid>{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CommonUtils.Test.Wpf</RootNamespace>
-    <AssemblyName>CommonUtils.Test.Wpf</AssemblyName>
+    <AssemblyName>CommonUtils.Framework.Test.Wpf</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -94,13 +94,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
-      <Project>{173ba26b-af8c-4949-a7ce-1e832296adfe}</Project>
-      <Name>CommonUtils</Name>
-    </ProjectReference>
+    <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon.ico" />
+    <ProjectReference Include="..\CommonUtils.Framework\CommonUtils.Framework.csproj">
+      <Project>{173ba26b-af8c-4949-a7ce-1e832296adfe}</Project>
+      <Name>CommonUtils.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
