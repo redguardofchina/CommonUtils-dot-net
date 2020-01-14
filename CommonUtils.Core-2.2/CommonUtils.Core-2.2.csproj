@@ -11,10 +11,6 @@
     <None Remove="Resources\**" />
   </ItemGroup>
 
-  <!--!!!!!!!!!!!!Microsoft.AspNetCore.App 2.2.0 -> Microsoft.EntityFrameworkCore.Abstractions (>= 2.2.0 && < 2.3.0).-->
-  <ItemGroup>
-
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonUtils\CommonUtils.csproj" />
   </ItemGroup>

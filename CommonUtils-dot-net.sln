@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Framework", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Framework.Test", "CommonUtils.Framework.Test\CommonUtils.Framework.Test.csproj", "{1A4CFB16-9160-46C6-8D5D-AD373C050504}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonUtils.Core-2.2.Test.Web", "CommonUtils.Core-2.2.Test.Web\CommonUtils.Core-2.2.Test.Web.csproj", "{749707F1-D053-4F12-90B0-5D5F1D61C223}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,12 @@ Global
 		{1A4CFB16-9160-46C6-8D5D-AD373C050504}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A4CFB16-9160-46C6-8D5D-AD373C050504}.Test|Any CPU.ActiveCfg = Release|Any CPU
 		{1A4CFB16-9160-46C6-8D5D-AD373C050504}.Test|Any CPU.Build.0 = Release|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Test|Any CPU.ActiveCfg = Debug|Any CPU
+		{749707F1-D053-4F12-90B0-5D5F1D61C223}.Test|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
