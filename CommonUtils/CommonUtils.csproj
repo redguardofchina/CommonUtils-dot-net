@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>CommonUtils</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>CommonUtils.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
