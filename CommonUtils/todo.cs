@@ -8,6 +8,6 @@ namespace CommonUtils
 {
     class todo
     {
-        //todo 尝试合并 net + net core = standard net
+        //todo 整理websocket 尝试talnet发送消息
     }
 }
