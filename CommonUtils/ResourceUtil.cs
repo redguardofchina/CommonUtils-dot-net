@@ -17,7 +17,7 @@ namespace CommonUtils
         /// </summary>
         public static Stream ReadStream(string path)
         {
-            var type = ReflectionUtil.IndexType(2);
+            var type = ReflectionUtil.GetType(2);
             return type.Assembly.GetManifestResourceStream(type.Namespace.Append(".", path));
         }
 

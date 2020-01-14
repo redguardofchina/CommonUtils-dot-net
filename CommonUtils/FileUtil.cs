@@ -439,6 +439,7 @@ namespace CommonUtils
                 if (encoding == null)
                     encoding = Encoding.UTF8;
                 File.WriteAllText(path, text, encoding);
+                LogUtil.Print("Text File Create: " + path);
             }
             catch (Exception ex)
             {

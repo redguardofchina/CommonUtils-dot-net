@@ -32,13 +32,8 @@ namespace CommonUtils
         /// </summary>
         static PathUtil()
         {
-            //为了兼容
-            if (AppDomain.CurrentDomain.BaseDirectory.EqualsStart(Environment.CurrentDirectory))
-                //.net core
-                Base = (Environment.CurrentDirectory + "/").ReplaceSprit();
-            else
-                //.net
-                Base = AppDomain.CurrentDomain.BaseDirectory;
+            Base = Environment.CurrentDirectory.ReplaceSprit();
+            Base = AppDomain.CurrentDomain.BaseDirectory.ReplaceSprit();
             ProjectRoot = Base.SubstringStartByFirst("/bin/");
         }
 

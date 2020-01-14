@@ -53,12 +53,12 @@ namespace CommonUtils
         /// <summary>
         /// 命令
         /// </summary>
-        public static void CreateCoreRunCmdFile(string @namespace = null)
+        public static void CreateRunFile(string assemblyName = null)
         {
-            if (string.IsNullOrEmpty(@namespace))
-                @namespace = ReflectionUtil.IndexNamespace(2);
-            var cmd = string.Format("dotnet {0}.dll", @namespace);
-            FileUtil.Save("~run.cmd", cmd, Encodings.UTF8NoBom);
+            if (string.IsNullOrEmpty(assemblyName))
+                assemblyName = ReflectionUtil.GetAssemblyName(2);
+            var cmd = string.Format("dotnet {0}.dll\r\npause", assemblyName);
+            FileUtil.Save(PathUtil.GetProjectFull("~run.cmd"), cmd, Encodings.UTF8NoBom);
         }
 
         /// <summary>

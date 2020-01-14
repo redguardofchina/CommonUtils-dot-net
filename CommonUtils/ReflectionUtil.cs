@@ -74,9 +74,7 @@ namespace CommonUtils
         /// 这个要在外层调用，CommonUtils属于被引用层，权限较低，此处示例
         /// </summary>
         public static Type GetTypeByName(string name)
-        {
-            return Type.GetType(name, true, true);
-        }
+        => Type.GetType(name, true, true);
 
         /// <summary>
         /// 根据名字得到成员
@@ -115,9 +113,7 @@ namespace CommonUtils
         /// 获取特性
         /// </summary>
         public static T GetAttribute<T>(this MemberInfo member, bool inherit = true) where T : Attribute
-        {
-            return member.GetAttributes<T>(inherit).FirstOrDefault();
-        }
+        => member.GetAttributes<T>(inherit).FirstOrDefault();
 
         /// <summary>
         /// 获取特性(包含继承)
@@ -165,33 +161,33 @@ namespace CommonUtils
         /// <summary>
         /// 公用程序集
         /// </summary>
-        public static readonly string CommonAssemblyName = CommonAssembly.FullName.Split(',')[0];
+        public static readonly string CommonAssemblyName = CommonAssembly.ManifestModule.Name;
         #endregion
 
         #region 自定义层级
         /// <summary>
         /// 类型
         /// </summary>
-        public static Type IndexType(int index)
-        {
-            return new StackTrace().GetFrame(index).GetMethod().ReflectedType;
-        }
+        public static Type GetType(int frameIndex)
+        => new StackTrace().GetFrame(frameIndex).GetMethod().ReflectedType;
 
         /// <summary>
         /// 命名空间
         /// </summary>
-        public static string IndexNamespace(int index)
-        {
-            return new StackTrace().GetFrame(index).GetMethod().ReflectedType.Namespace;
-        }
+        public static string GetNamespace(int frameIndex)
+        => new StackTrace().GetFrame(frameIndex).GetMethod().ReflectedType.Namespace;
 
         /// <summary>
         /// 程序集
         /// </summary>
-        public static Assembly IndexAssembly(int index)
-        {
-            return new StackTrace().GetFrame(index).GetMethod().ReflectedType.Assembly;
-        }
+        public static Assembly GetAssembly(int frameIndex)
+        => new StackTrace().GetFrame(frameIndex).GetMethod().ReflectedType.Assembly;
+
+        /// <summary>
+        /// 程序集名
+        /// </summary>
+        public static string GetAssemblyName(int frameIndex)
+        => new StackTrace().GetFrame(frameIndex).GetMethod().Module.Name;
         #endregion
 
         #region 调用层级
@@ -199,25 +195,19 @@ namespace CommonUtils
         /// 当前类型
         /// </summary>
         public static Type CurrentType()
-        {
-            return new StackTrace().GetFrame(1).GetMethod().ReflectedType;
-        }
+        => new StackTrace().GetFrame(1).GetMethod().ReflectedType;
 
         /// <summary>
         /// 当前命名空间
         /// </summary>
         public static string CurrentNamespace()
-        {
-            return new StackTrace().GetFrame(1).GetMethod().ReflectedType.Namespace;
-        }
+        => new StackTrace().GetFrame(1).GetMethod().ReflectedType.Namespace;
 
         /// <summary>
         /// 当前程序集
         /// </summary>
         public static Assembly CurrentAssembly()
-        {
-            return new StackTrace().GetFrame(1).GetMethod().ReflectedType.Assembly;
-        }
+        => new StackTrace().GetFrame(1).GetMethod().ReflectedType.Assembly;
 
         /// <summary>
         /// 当前方法名
