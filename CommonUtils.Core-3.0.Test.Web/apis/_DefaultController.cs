@@ -11,9 +11,18 @@ namespace CommonUtils.Test.Web.Api
     /// <summary>
     /// 默认接口
     /// </summary>
-    [Route("api/[action]")]
+    [Route("api/[controller]/[action]")]
     public class _DefaultController : ControllerBase
     {
+        /// <summary>
+        /// 获取天气信息
+        /// </summary>
+        [HttpGet]
+        public IActionResult GetWeather(string city = "shanghai")
+        {
+            return ApiResult.Ok(WeatherUtil.Get(city));
+        }
+
         [HttpGet]
         public IActionResult HttpGetTest()
         {
@@ -72,15 +81,6 @@ namespace CommonUtils.Test.Web.Api
         public IActionResult GetNowLongTimestamp()
         {
             return Ok(DateTime.Now.LongStamp());
-        }
-
-        /// <summary>
-        /// 获取天气信息
-        /// </summary>
-        [HttpGet]
-        public IActionResult GetWeather()
-        {
-            return ApiResult.Ok(WeatherUtil.Get());
         }
     }
 }
