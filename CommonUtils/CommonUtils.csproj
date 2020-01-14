@@ -57,4 +57,6 @@
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.1.0" />
   </ItemGroup>
 
+  <!--Microsoft.VisualStudio.Web.CodeGeneration.Design，IDE会自动生成，3.0.0以上版本会导致发布文件出现各国语言文件夹的CodeAnalysis，删除对项目无影响，建议及时删除-->
+
 </Project>

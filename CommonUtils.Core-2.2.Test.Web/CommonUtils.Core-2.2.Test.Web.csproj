@@ -10,6 +10,10 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils.Core-2.2\CommonUtils.Core-2.2.csproj" />
+  </ItemGroup>
+
   <!--2.2引用3.*不可依赖引用，需直接引用，即复制nuget到目标项目即可-->
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
@@ -30,8 +34,9 @@
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.1.0" />
   </ItemGroup>
 
+  <!--以下是IDE自动生成的，删了也可以，可能会再次生成-->
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils.Core-2.2\CommonUtils.Core-2.2.csproj" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
   </ItemGroup>
 
 </Project>
