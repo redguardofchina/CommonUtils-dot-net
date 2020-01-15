@@ -9,7 +9,12 @@ namespace CommonUtils
 
         public static ProcessResult GetStatusInfo(string path)
         {
-            if (!HasDriver || !FileSystem.IsFloder(path) || !FloderUtil.Exists(path.Combine(".git")))
+            if (!HasDriver || FileSystem.IsFile(path))
+                return default;
+
+            var markPath = path.Combine(".git");
+
+            if (!FileSystem.IsFloder(markPath) && !FileSystem.IsFile(markPath))
                 return default;
 
             //影响原有git的图标获取 好像与争抢仓库的IO有关

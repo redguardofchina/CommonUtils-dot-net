@@ -11,7 +11,7 @@ namespace CommonUtils
         => FileUtil.Exists(path);
 
         public static bool IsFloder(string path)
-       => FloderUtil.Exists(path);
+        => FloderUtil.Exists(path);
 
         /// <summary>
         /// 不为空，且存在

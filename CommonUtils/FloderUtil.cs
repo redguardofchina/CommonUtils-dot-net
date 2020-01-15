@@ -35,49 +35,37 @@ namespace CommonUtils
         /// 相对路径 不以/开头，不以/结尾
         /// </summary>
         public static string GetSubRelativePath(this DirectoryInfo floder, FileSystemInfo file)
-        {
-            return floder.Relative(file.FullName);
-        }
+        => floder.Relative(file.FullName);
 
         /// <summary>
         /// 判断文件夹下的子文件或子文件夹是否存在
         /// </summary>
         public static bool Exists(this DirectoryInfo floder, string relativePath)
-        {
-            return floder.File(relativePath).Exists || floder.Floder(relativePath).Exists;
-        }
+        => floder.File(relativePath).Exists || floder.Floder(relativePath).Exists;
 
         /// <summary>
         /// 路径拼接
         /// </summary>
         public static string Combine(this DirectoryInfo floder, params string[] right)
-        {
-            return floder.FullName.Combine(right);
-        }
+        => floder.FullName.Combine(right);
 
         /// <summary>
         /// 获取子文件夹
         /// </summary>
         public static string Child(this DirectoryInfo floder, string relativePath)
-        {
-            return floder.Combine(relativePath);
-        }
+        => floder.Combine(relativePath);
 
         /// <summary>
         /// 文件夹下的文件
         /// </summary>
         public static FileInfo File(this DirectoryInfo floder, string relativePath)
-        {
-            return FileUtil.GetInfo(floder.Child(relativePath));
-        }
+        => FileUtil.GetInfo(floder.Child(relativePath));
 
         /// <summary>
         /// 获取子文件夹
         /// </summary>
         public static DirectoryInfo Floder(this DirectoryInfo floder, string relativePath)
-        {
-            return GetInfo(floder.Child(relativePath));
-        }
+        => GetInfo(floder.Child(relativePath));
 
         /// <summary>
         /// 获取所有文件
@@ -150,33 +138,25 @@ namespace CommonUtils
         /// 打开文件夹
         /// </summary>
         public static void Open(string path)
-        {
-            ProcessUtil.Run(@"C:\Windows\explorer.exe", path.ReplaceSprit(false).AddQuotation());
-        }
+        => ProcessUtil.Run(@"C:\Windows\explorer.exe", path.ReplaceSprit(false).AddQuotation());
 
         /// <summary>
         /// 打开文件夹并选中文件
         /// </summary>
         public static void OpenFileFloder(string path)
-        {
-            ProcessUtil.Run(@"C:\Windows\explorer.exe", "/select," + path.ReplaceSprit(false).AddQuotation());
-        }
+        => ProcessUtil.Run(@"C:\Windows\explorer.exe", "/select," + path.ReplaceSprit(false).AddQuotation());
 
         /// <summary>
         /// 创建文件夹
         /// </summary>
         public static void Create(string path)
-        {
-            Directory.CreateDirectory(path);
-        }
+        => Directory.CreateDirectory(path);
 
         /// <summary>
         /// 判断是否存在
         /// </summary>
         public static bool Exists(string path)
-        {
-            return Directory.Exists(path);
-        }
+        => Directory.Exists(path);
 
         /// <summary>
         /// 删除文件夹
@@ -198,9 +178,7 @@ namespace CommonUtils
         /// 删除文件夹
         /// </summary>
         public static void DeleteRecursive(this DirectoryInfo floder)
-        {
-            floder.Delete(true);
-        }
+        => floder.Delete(true);
 
         /// <summary>
         /// 删除空文件
@@ -305,18 +283,14 @@ namespace CommonUtils
         /// </summary>
         /// <param name="sub">包含子文件夹</param>
         public static void CopyTo(this DirectoryInfo src, string dest, bool sub = true)
-        {
-            src.CopyTo(GetInfo(dest), sub);
-        }
+        => src.CopyTo(GetInfo(dest), sub);
 
         /// <summary>
         /// 复制文件夹
         /// </summary>
         /// <param name="sub">包含子文件夹</param>
         public static void Copy(string src, string dest, bool sub = true)
-        {
-            GetInfo(src).CopyTo(dest, sub);
-        }
+        => GetInfo(src).CopyTo(dest, sub);
 
         /// <summary>
         /// 移动、覆盖、合并文件夹
@@ -343,9 +317,7 @@ namespace CommonUtils
         /// 移动、覆盖、合并文件夹
         /// </summary>
         public static void Move(string from, string to)
-        {
-            GetInfo(from).MoveToEx(to);
-        }
+        => GetInfo(from).MoveToEx(to);
 
         /// <summary>
         /// 删除不对称的文件
