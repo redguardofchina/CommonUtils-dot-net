@@ -9,7 +9,7 @@ using System.Threading;
 namespace CommonUtils
 {
     /// <summary>
-    /// Socket服务器
+    /// Socket服务器 telnet测试格式:telnet空格IP空格端口
     /// </summary>
     public class SocketServer
     {
@@ -28,7 +28,6 @@ namespace CommonUtils
 
         public SocketServer(string remote) : this(NetworksUtil.GetIPEndPoint(remote)) { }
         public SocketServer(string host, int port) : this(NetworksUtil.GetIPEndPoint(host, port)) { }
-        public SocketServer(string host, string port) : this(host, port.ToInt()) { }
         public SocketServer(int port) : this("127.0.0.1", port) { }
 
         /// <summary>
@@ -175,7 +174,7 @@ namespace CommonUtils
                 });
                 _mainListener.Start();
                 //启动回调
-                LogUtil.Log("Socket server has started listening");
+                LogUtil.Log("Socket server has started listening with end remark '" + SocketUtil.EndRemark + "'.");
                 OnStart?.Invoke();
             }
             catch (Exception ex)

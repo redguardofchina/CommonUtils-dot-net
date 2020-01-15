@@ -19,6 +19,11 @@ namespace CommonUtils
         /// <summary>
         /// 结束标识  尽量短  保证不拆包
         /// </summary>
+        public const string EndRemark = "!end!";
+
+        /// <summary>
+        /// 结束标识  尽量短  保证不拆包
+        /// </summary>
         private static byte[] _endBytes = StringUtil.GetBytes("!end!");
 
         public static void SendEnd(this Socket socket)
