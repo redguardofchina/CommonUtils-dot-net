@@ -5,6 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>WebSocketClient</title>
+    <link href="/common/common.css" rel="stylesheet" />
+    <script src="/common/jquery-3.4.1.js"></script>
     <script type="text/javascript">
         function WebSocketTest() {
             if ("WebSocket" in window) {
@@ -36,16 +38,18 @@
             }
         }
     </script>
-
+    <style>
+        html {
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
+    <input placeholder="ws://xxx.xxx.xxx.xxx:xxxx/xxxx" class="width500px" /> <button>连接</button> <button>断开</button>
     <hr />
-    <input placeholder="ws://xxx.xxx.xxx.xxx:xxxx/xxxx" width="500" /> <button>连接</button> <button>断开</button>
-    <hr />
-    <textarea width="800" height="600"></textarea> <button>发送</button>
+    <textarea class="width800px height100px"></textarea> <button>发送</button>
     <hr />
     日志：<br />
-    <textarea width="700" height="600"></textarea>
-    <hr />
+    <textarea class="width700px height300px"></textarea>
 </body>
 </html>
