@@ -8,22 +8,22 @@ namespace CommonUtils
 {
     public class WebSocketSession : WebSocketBehavior
     {
-        public Action<Exception, WebSocketSession> OnError_;
-        public Action<WebSocketSession> OnOpen_;
-        public Action<string, WebSocketSession> OnReceive_;
-        public Action<WebSocketSession> OnClose_;
+        public Action<Exception, WebSocketSession> ErrorEvent;
+        public Action<WebSocketSession> ConnectEvent;
+        public Action<string, WebSocketSession> ReceiveEvent;
+        public Action<WebSocketSession> DisconnectEvent;
 
         protected override void OnError(ErrorEventArgs e)
-        => OnError_?.Invoke(e.Exception, this);
+        => ErrorEvent?.Invoke(e.Exception, this);
 
         protected override void OnOpen()
-        => OnOpen_?.Invoke(this);
+        => ConnectEvent?.Invoke(this);
 
         protected override void OnMessage(MessageEventArgs e)
-        => OnReceive_?.Invoke(e.Data, this);
+        => ReceiveEvent?.Invoke(e.Data, this);
 
         protected override void OnClose(CloseEventArgs e)
-        => OnClose_?.Invoke(this);
+        => DisconnectEvent?.Invoke(this);
 
         public void Send_(string data)
         => Send(data);

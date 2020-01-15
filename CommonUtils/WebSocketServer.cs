@@ -20,21 +20,21 @@ namespace CommonUtils
             _server = new WebSocketSharp.Server.WebSocketServer(iep.Address, iep.Port);
             _server.AddWebSocketService(route, delegate (WebSocketSession session)
             {
-                session.OnError_ = OnSessionError;
-                session.OnOpen_ = OnSessionConnect;
-                session.OnReceive_ = OnSessionReceive;
-                session.OnClose_ = OnSessionClose;
+                session.ErrorEvent = SessionErrorEvent;
+                session.ConnectEvent = SessionConnectEvent;
+                session.ReceiveEvent = SessionReceiveEvent;
+                session.DisconnectEvent = SessionDisconnectEvent;
                 _sessions.Add(session);
             });
         }
 
-        public event Action<Exception, WebSocketSession> OnSessionError;
+        public event Action<Exception, WebSocketSession> SessionErrorEvent;
 
-        public event Action<WebSocketSession> OnSessionConnect;
+        public event Action<WebSocketSession> SessionConnectEvent;
 
-        public event Action<string, WebSocketSession> OnSessionReceive;
+        public event Action<string, WebSocketSession> SessionReceiveEvent;
 
-        public event Action<WebSocketSession> OnSessionClose;
+        public event Action<WebSocketSession> SessionDisconnectEvent;
 
         public void Start()
         => _server.Start();
