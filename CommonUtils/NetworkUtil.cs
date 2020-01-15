@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CommonUtils
 {
-    public static class NetworkUtil
+    public static class NetworksUtil
     {
         public static IPAddress GetIp(byte byte1, byte byte2, byte byte3, byte byte4) => new IPAddress(new byte[] { byte1, byte2, byte3, byte4 });
 
@@ -29,7 +29,7 @@ namespace CommonUtils
         /// <summary>
         /// 获取EndPoint
         /// </summary>
-        public static IPEndPoint GetEndPoint(string remote)
+        public static IPEndPoint GetIPEndPoint(string remote)
         {
             try
             {
