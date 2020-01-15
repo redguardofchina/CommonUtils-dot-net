@@ -1,0 +1,3 @@
+[submodule "CommonUtils.Core-3.0.Test.Web/wwwroot/common"]
+	path = CommonUtils.Core-3.0.Test.Web/wwwroot/common
+	url = https://gitee.com/atalent/common-web.git
