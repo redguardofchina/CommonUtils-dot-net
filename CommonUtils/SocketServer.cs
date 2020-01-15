@@ -27,7 +27,7 @@ namespace CommonUtils
         }
 
         public SocketServer(string remote) : this(NetworksUtil.GetIPEndPoint(remote)) { }
-        public SocketServer(string host, int port) : this(NetworksUtil.GetEndPoint(host, port)) { }
+        public SocketServer(string host, int port) : this(NetworksUtil.GetIPEndPoint(host, port)) { }
         public SocketServer(string host, string port) : this(host, port.ToInt()) { }
         public SocketServer(int port) : this("127.0.0.1", port) { }
 

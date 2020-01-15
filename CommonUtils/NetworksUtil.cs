@@ -47,7 +47,7 @@ namespace CommonUtils
         /// <summary>
         /// 获取EndPoint
         /// </summary>
-        public static IPEndPoint GetEndPoint(string ipOrDomain, int port)
+        public static IPEndPoint GetIPEndPoint(string ipOrDomain, int port)
         {
             try
             {

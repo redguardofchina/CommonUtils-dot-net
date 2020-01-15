@@ -29,7 +29,7 @@ namespace CommonUtils
         }
 
         public SocketClient(string remote) : this(NetworksUtil.GetIPEndPoint(remote)) { }
-        public SocketClient(string host, int port) : this(NetworksUtil.GetEndPoint(host, port)) { }
+        public SocketClient(string host, int port) : this(NetworksUtil.GetIPEndPoint(host, port)) { }
         public SocketClient(string host, string port) : this(host, int.Parse(port)) { }
         public SocketClient(int port) : this("127.0.0.1", port) { }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 
 namespace CommonUtils
@@ -33,10 +34,15 @@ namespace CommonUtils
             });
         }
 
+        public WebSocketServer(string iep, string route)
+        : this(NetworksUtil.GetIPEndPoint(iep), route) { }
+
         public void Start()
         {
             _server.Start();
-            Console.WriteLine("WebSocketServer started: " + new IPEndPoint(_server.Address, _server.Port));
+            Console.WriteLine("WebSocketServer started: sw://"
+                + new IPEndPoint(_server.Address, _server.Port)
+                + _server.WebSocketServices.Paths.FirstOrDefault());
         }
 
         public void Send(string data)
