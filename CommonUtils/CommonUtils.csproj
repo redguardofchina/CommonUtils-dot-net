@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <!--<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />-->
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
@@ -60,6 +60,13 @@
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
   </ItemGroup>
 
-  <!--Microsoft.VisualStudio.Web.CodeGeneration.Design，IDE会自动生成，3.0.0以上版本会导致发布文件出现各国语言文件夹的CodeAnalysis，删除对项目无影响，建议及时删除-->
+  <!--IDE自动生成黑名单
+  Microsoft.VisualStudio.Web.CodeGeneration.Design 3.0.0
+  -->
+
+  <!--出现各国语言文件夹黑名单
+  Microsoft.VisualStudio.Web.CodeGeneration.Design 3.0.0
+  Microsoft.EntityFrameworkCore.SqlServer-Microsoft.Data.SqlClient
+  -->
 
 </Project>
