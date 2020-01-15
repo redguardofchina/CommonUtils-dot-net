@@ -37,7 +37,10 @@ namespace CommonUtils
         public event Action<WebSocketSession> SessionDisconnectEvent;
 
         public void Start()
-        => _server.Start();
+        {
+            _server.Start();
+            Console.WriteLine("WebSocketServer started: " + new IPEndPoint(_server.Address, _server.Port));
+        }
 
         public void Send(string data)
         {
@@ -46,6 +49,9 @@ namespace CommonUtils
         }
 
         public void Stop()
-        => _server.Stop();
+        {
+            _server.Stop();
+            Console.WriteLine("WebSocketServer stopped");
+        }
     }
 }
