@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
-using WebSocketSharp;
-using WebSocketSharp.Server;
 
 namespace CommonUtils
 {
     public class WebSocketServer
     {
         private WebSocketSharp.Server.WebSocketServer _server;
+
+        public event Action<Exception, WebSocketSession> SessionErrorEvent;
+
+        public event Action<WebSocketSession> SessionConnectEvent;
+
+        public event Action<string, WebSocketSession> SessionReceiveEvent;
+
+        public event Action<WebSocketSession> SessionDisconnectEvent;
 
         private List<WebSocketSession> _sessions = new List<WebSocketSession>();
 
@@ -27,14 +32,6 @@ namespace CommonUtils
                 _sessions.Add(session);
             });
         }
-
-        public event Action<Exception, WebSocketSession> SessionErrorEvent;
-
-        public event Action<WebSocketSession> SessionConnectEvent;
-
-        public event Action<string, WebSocketSession> SessionReceiveEvent;
-
-        public event Action<WebSocketSession> SessionDisconnectEvent;
 
         public void Start()
         {

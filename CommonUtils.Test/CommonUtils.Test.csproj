@@ -9,10 +9,4 @@
     <ProjectReference Include="..\CommonUtils\CommonUtils.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="~run.cmd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
