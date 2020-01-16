@@ -30,7 +30,8 @@ namespace CommonUtils
 
         public static readonly string FriendlyName = AppDomain.CurrentDomain.FriendlyName;
 
-        public static readonly ProcessStartInfo ProcessStartInfo = Process.StartInfo;
+        //这个可能触发异常
+        //public static readonly ProcessStartInfo ProcessStartInfo = Process.StartInfo;
 
         //other
 

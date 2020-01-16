@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj" />
+    <ProjectReference Include="..\CommonUtils.Core-3.0\CommonUtils.Core-3.0.csproj" />
   </ItemGroup>
 
 </Project>
