@@ -40,7 +40,7 @@ namespace CommonUtils
         public void Start()
         {
             _server.Start();
-            Console.WriteLine("WebSocketServer started: sw://"
+            LogUtil.Print("WebSocketServer started: sw://"
                 + new IPEndPoint(_server.Address, _server.Port)
                 + _server.WebSocketServices.Paths.FirstOrDefault());
         }
@@ -48,7 +48,7 @@ namespace CommonUtils
         public void Send(string data)
         {
             foreach (var session in _sessions)
-                session.Send_(data);
+                session.Send(data);
         }
 
         public void Stop()

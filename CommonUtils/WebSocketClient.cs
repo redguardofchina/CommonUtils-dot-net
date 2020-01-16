@@ -14,13 +14,29 @@ namespace CommonUtils
         public WebSocketClient(string url)
         : base(url)
         {
-            OnError += delegate (object sender, ErrorEventArgs e) { ErrorEvent?.Invoke(e.Exception); };
-            OnOpen += delegate (object sender, EventArgs e) { OpenEvent?.Invoke(); };
-            OnMessage += delegate (object sender, MessageEventArgs e) { MessageEvent?.Invoke(e.Data); };
-            OnClose += delegate (object sender, CloseEventArgs e) { CloseEvent?.Invoke(); };
+            OnError += delegate (object sender, ErrorEventArgs e)
+            {
+                LogUtil.Print("ErrorEvent");
+                ErrorEvent?.Invoke(e.Exception);
+            };
+            OnOpen += delegate (object sender, EventArgs e)
+            {
+                LogUtil.Print("WebSocketClient connect: sw://" + Url);
+                OpenEvent?.Invoke();
+            };
+            OnMessage += delegate (object sender, MessageEventArgs e)
+            {
+                LogUtil.Print("MessageEvent");
+                MessageEvent?.Invoke(e.Data);
+            };
+            OnClose += delegate (object sender, CloseEventArgs e)
+            {
+                LogUtil.Print("CloseEvent");
+                CloseEvent?.Invoke();
+            };
         }
 
         public WebSocketClient(IPEndPoint iep, string route)
-        : base("ws://" + iep + (route[0] == '/' ? route : ("/" + route))) { }
+        : this("ws://" + iep + (route[0] == '/' ? route : ("/" + route))) { }
     }
 }

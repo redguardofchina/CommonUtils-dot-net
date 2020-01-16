@@ -12,18 +12,33 @@ namespace CommonUtils
         public Action<WebSocketSession> DisconnectEvent;
 
         protected override void OnError(ErrorEventArgs e)
-        => ErrorEvent?.Invoke(e.Exception, this);
+        {
+            LogUtil.Print("ErrorEvent");
+            ErrorEvent?.Invoke(e.Exception, this);
+        }
 
         protected override void OnOpen()
-        => ConnectEvent?.Invoke(this);
+        {
+            LogUtil.Print("ConnectEvent");
+            ConnectEvent?.Invoke(this);
+        }
 
         protected override void OnMessage(MessageEventArgs e)
-        => ReceiveEvent?.Invoke(e.Data, this);
+        {
+            LogUtil.Print("ReceiveEvent");
+            ReceiveEvent?.Invoke(e.Data, this);
+        }
 
         protected override void OnClose(CloseEventArgs e)
-        => DisconnectEvent?.Invoke(this);
+        {
+            LogUtil.Print("DisconnectEvent");
+            DisconnectEvent?.Invoke(this);
+        }
 
-        public void Send_(string data)
-        => Send(data);
+        /// <summary>
+        /// send new new new
+        /// </summary>
+        public new void Send(string data)
+        => base.Send(data);
     }
 }
