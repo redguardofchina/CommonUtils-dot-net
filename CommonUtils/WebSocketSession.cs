@@ -13,25 +13,25 @@ namespace CommonUtils
 
         protected override void OnError(ErrorEventArgs e)
         {
-            LogUtil.Print("ErrorEvent");
+            LogUtil.Print("ErrorEvent on " + Context.UserEndPoint);
             ErrorEvent?.Invoke(e.Exception, this);
         }
 
         protected override void OnOpen()
         {
-            LogUtil.Print("ConnectEvent");
+            LogUtil.Print("ConnectEvent: " + Context.UserEndPoint + " → " + Context.ServerEndPoint);
             ConnectEvent?.Invoke(this);
         }
 
         protected override void OnMessage(MessageEventArgs e)
         {
-            LogUtil.Print("ReceiveEvent");
+            LogUtil.Print("ReceiveEvent: " + Context.UserEndPoint + " → " + Context.ServerEndPoint);
             ReceiveEvent?.Invoke(e.Data, this);
         }
 
         protected override void OnClose(CloseEventArgs e)
         {
-            LogUtil.Print("DisconnectEvent");
+            LogUtil.Print("DisconnectEvent: " + Context.UserEndPoint);
             DisconnectEvent?.Invoke(this);
         }
 

@@ -40,7 +40,7 @@ namespace CommonUtils
         public void Start()
         {
             _server.Start();
-            LogUtil.Print("WebSocketServer started: sw://"
+            LogUtil.Print("WebSocketServer started: ws://"
                 + new IPEndPoint(_server.Address, _server.Port)
                 + _server.WebSocketServices.Paths.FirstOrDefault());
         }
