@@ -1,7 +1,7 @@
-﻿using Microsoft.Data.Sqlite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SQLite;
 
 namespace CommonUtils
 {
@@ -45,16 +45,16 @@ namespace CommonUtils
         /// 获取连接器
         /// </summary>
         protected override DbConnection GetConnection()
-        => new SqliteConnection(ConnectString);
+        => new SQLiteConnection(ConnectString);
 
         /// <summary>
         /// 获取参数
         /// </summary>
         protected override DbParameter[] GetParameters(Dictionary<string, object> args)
         {
-            var list = new List<SqliteParameter>();
+            var list = new List<SQLiteParameter>();
             foreach (var keyValue in args)
-                list.Add(new SqliteParameter(keyValue.Key, keyValue.Value));
+                list.Add(new SQLiteParameter(keyValue.Key, keyValue.Value));
             return list.ToArray();
         }
 

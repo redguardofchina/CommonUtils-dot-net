@@ -69,24 +69,6 @@ namespace CommonUtils
         /// </summary>
         public static void CrossDomain(this IApplicationBuilder builder)
         => builder.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyMethod().AllowAnyOrigin());
-
-        /// <summary>
-        /// 解除大文件上传限制
-        /// </summary>
-        public static IWebHostBuilder CancelSizeLimit(this IWebHostBuilder webHostBuilder)
-        {
-            webHostBuilder.UseKestrel(options =>
-            {
-                options.Limits.MaxRequestBodySize = long.MaxValue;
-                options.Limits.MaxRequestBufferSize = long.MaxValue;
-                options.Limits.MaxRequestLineSize = int.MaxValue;
-            });
-
-            //如果没有这句话，IIS模式下.UseKestrel会引发500.3异常
-            webHostBuilder.UseIIS();
-
-            return webHostBuilder;
-        }
         #endregion
 
         #region ContentTypeProvider
