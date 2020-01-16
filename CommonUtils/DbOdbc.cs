@@ -18,10 +18,10 @@ namespace CommonUtils
         {
             var info = new StringBuilder();
             info.AppendLine("-----------------------------WOW6432Node-------------------------");
-            info.AppendLines(RegeditUtil.GetItemNames(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\ODBC\ODBCINST.INI\ODBC Drivers"));
+            info.AppendLines(RegistryUtil.GetItemNames(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\ODBC\ODBCINST.INI\ODBC Drivers"));
             info.AppendLine();
             info.AppendLine("-----------------------------DEFAULT-------------------------");
-            info.AppendLines(RegeditUtil.GetItemNames(@"HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers"));
+            info.AppendLines(RegistryUtil.GetItemNames(@"HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers"));
             info.RemoveEnd();
             info.Print();
         }

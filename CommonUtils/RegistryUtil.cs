@@ -1,14 +1,11 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommonUtils
 {
     /// <summary>
     /// 分隔符必须使用\\
     /// </summary>
-    public static class RegeditUtil
+    public static class RegistryUtil
     {
         public static RegistryKey ClassesRoot
         => Registry.ClassesRoot;
