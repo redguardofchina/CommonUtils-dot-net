@@ -35,4 +35,8 @@
   Microsoft.EntityFrameworkCore.SqlServer-Microsoft.Data.SqlClient
   -->
 
+  <!--注意
+  Framework的依赖引用不靠谱
+  -->
+
 </Project>
