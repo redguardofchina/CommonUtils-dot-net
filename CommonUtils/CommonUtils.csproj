@@ -22,7 +22,7 @@
     <PackageReference Include="System.Data.OleDb" Version="4.7.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.112" />
-    <PackageReference Include="ThoughtWorks.QRCode.Core" Version="1.0.1.2" />
+    <PackageReference Include="ThoughtWorks.QRCode.Standard" Version="1.0.0.1" />
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
   </ItemGroup>
 
