@@ -10,9 +10,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace CommonUtils
+namespace CommonUtils.Core3
 {
-    public static class CoreUtil
+    public static partial class CoreUtil
     {
         /// <summary>
         /// 解除大文件上传限制

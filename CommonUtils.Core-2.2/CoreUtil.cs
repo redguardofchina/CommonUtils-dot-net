@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace CommonUtils
 {
-    public static class CoreUtil
+    public static partial class CoreUtil
     {
         //IServiceCollection中取的数据库单例可不可用？
         //添加/删除可以,如果数据被其他实例修改，缓存与数据库不同步，单例是不知道的，造成数据脏读写
