@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D52ECD55-9CC9-4EF1-A0CE-286EDC5E991F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CommonUtils.Test.Wpf</RootNamespace>
+    <RootNamespace>CommonUtils.Wpf.Test</RootNamespace>
     <AssemblyName>CommonUtils.Framework.Test.Wpf</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
